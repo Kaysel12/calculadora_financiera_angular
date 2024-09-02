@@ -1,0 +1,47 @@
+<section class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <app-header />
+
+    <form (ngSubmit)="onSubmit()" class="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
+        <!-- Select product -->
+        <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select your product</label>
+        <select [(ngModel)]="product" name="product" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-[20px]">
+            <option *ngFor="let prod of products" [value]="prod.id">{{ prod.nombre }}</option>
+          </select>
+
+        <!-- Reinvestment checkbox -->
+        <div class="relative z-0 w-full mb-5 group flex">
+            <input [(ngModel)]="enReinvestment" type="checkbox" name="reinvestment" id="reinvestment" class="block h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-500 dark:border-gray-600" />
+            <label for="reinvestment" class="ml-2 text-sm text-gray-500 dark:text-gray-400">Reinvestment</label>
+        </div>
+
+        <!-- Term input -->
+        <div class="relative z-0 w-full mb-5 group">
+            <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Term</label>
+            <input [(ngModel)]="term" type="number" name="term" id="term" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+        </div>
+
+        <!-- Creation date input (not editable, just for display) -->
+        <div class="relative z-0 w-full mb-5 group">
+            <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Date</label>
+            <input [(ngModel)]="dateCreated" type="datetime-local" name="date" id="date">
+        </div>
+
+        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+    </form>
+</section>
+
+<!-- Modal -->
+<div *ngIf="showModal" class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-8">
+      <h2 class="text-xl font-semibold mb-4">Resultados de la Inversión</h2>
+      <ul>
+        <li><strong>Producto:</strong> {{ result?.producto }}</li>
+        <li><strong>Fecha de Inicio:</strong> {{ result?.fecha_inicio }}</li>
+        <li><strong>Fecha de Fin:</strong> {{ result?.fecha_fin }}</li>
+        <li><strong>Plazo:</strong> {{ result?.plazo }}</li>
+        <li><strong>Plazo Real:</strong> {{ result?.plazo_real }}</li>
+      </ul>
+      <button (click)="closeModal()" class="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg">Cerrar</button>
+    </div>
+  </div>
+  
