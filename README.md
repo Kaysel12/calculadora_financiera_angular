@@ -1,27 +1,54 @@
-# CalculadoraFinancieraAngular
+# Bienvenido al Proyecto de Calculadora Financiera Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+<p align="center">
+    <img alt="Angular Logo" title="Angular Logo" src="https://angular.io/assets/images/logos/angular/angular.svg" width="450">
+</p>
 
-## Development server
+## Comenzando
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+¡Bienvenido al Proyecto de Calculadora Financiera Angular! Este proyecto está construido con Angular y está configurado para ejecutarse con Docker. A continuación, se presentan algunos recursos para ayudarte a comenzar:
 
-## Code scaffolding
+### Documentación de Referencia
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para más información, por favor consulta las siguientes secciones:
 
-## Build
+- [Documentación Oficial de Angular](https://angular.io/docs)
+- [Angular CLI](https://angular.io/cli)
+- [Docker Documentation](https://docs.docker.com/)
+- [Nginx Documentation](https://nginx.org/en/docs/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Guías
 
-## Running unit tests
+Las siguientes guías ilustran cómo utilizar algunas características concretas:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [Guía de Angular CLI](https://angular.io/cli)
+- [Documentación sobre Docker y Nginx](https://docs.docker.com/engine/examples/nginx/)
+- [Tutorial de Construcción de Aplicaciones Angular](https://angular.io/guide/architecture)
 
-## Running end-to-end tests
+### Ejecutar el Proyecto con Docker
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Asegúrate de que Docker y Docker Compose estén instalados y en funcionamiento en tu máquina. Luego, ejecuta el siguiente comando para construir e iniciar los contenedores:
 
-## Further help
+```bash docker-compose up --build ```
+Esto construirá la imagen de Docker para tu aplicación Angular y levantará el contenedor. El contenedor Nginx servirá la aplicación Angular construida en el contenedor de construcción.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Nota:** Si encuentras problemas al acceder a la aplicación, prueba abrir el enlace en una ventana de incógnito. A veces, la caché del navegador puede interferir con la visualización de los cambios.
+
+
+### Acceso a la Aplicación
+
+Una vez que el contenedor esté en funcionamiento, puedes acceder a la aplicación en tu navegador en [http://localhost](http://localhost). La aplicación debería estar disponible y lista para interactuar.
+
+### Estructura del Proyecto
+
+- **`Dockerfile`**: Define las etapas de construcción para la aplicación Angular. La primera etapa (`build`) construye la aplicación Angular y la segunda etapa usa Nginx para servir los archivos estáticos.
+
+- **`docker-compose.yml`**: Configura el servicio de la aplicación Angular, especificando la construcción de la imagen y la configuración de puertos y redes.
+
+- **`nginx.conf`**: Configura el servidor Nginx para servir la aplicación. Asegúrate de ajustar este archivo según las necesidades específicas de tu proyecto.
+
+### Más Ayuda
+
+Para obtener más ayuda sobre Angular CLI, usa el siguiente comando:
+
+```bash ng help ```
