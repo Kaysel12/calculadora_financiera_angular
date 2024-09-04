@@ -29,7 +29,7 @@ Las siguientes guías ilustran cómo utilizar algunas características concretas
 
 Asegúrate de que Docker y Docker Compose estén instalados y en funcionamiento en tu máquina. Luego, ejecuta el siguiente comando para construir e iniciar los contenedores:
 
-```bash docker-compose up --build ```
+```docker-compose up --build ```
 Esto construirá la imagen de Docker para tu aplicación Angular y levantará el contenedor. El contenedor Nginx servirá la aplicación Angular construida en el contenedor de construcción.
 
 **Nota:** Si encuentras problemas al acceder a la aplicación, prueba abrir el enlace en una ventana de incógnito. A veces, la caché del navegador puede interferir con la visualización de los cambios.
