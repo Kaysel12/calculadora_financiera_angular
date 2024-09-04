@@ -22,7 +22,14 @@ export default class LoginComponent {
   login(): void {
     this.authService.login(this.username, this.password).subscribe({
       next: () => this.router.navigate(['/calculadora']),
-      error: (error) => console.log(error)
+      error: (error) => {
+        let errorMessage;
+        if (error.status >= 400 && error.status < 500) {
+          errorMessage = 'Error de autenticación: ' + (error.error?.detail || 'Credenciales incorrectas.');
+        }
+        
+        return alert(errorMessage)
+      }
     });
   }
 
