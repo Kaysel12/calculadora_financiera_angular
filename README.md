@@ -51,4 +51,4 @@ Una vez que el contenedor esté en funcionamiento, puedes acceder a la aplicaci�
 
 Para obtener más ayuda sobre Angular CLI, usa el siguiente comando:
 
-```bash ng help ```
+```ng help ```
