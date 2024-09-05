@@ -37,7 +37,7 @@ Esto construirá la imagen de Docker para tu aplicación Angular y levantará el
 
 ### Acceso a la Aplicación
 
-Una vez que el contenedor esté en funcionamiento, puedes acceder a la aplicación en tu navegador en [http://localhost](http://localhost). La aplicación debería estar disponible y lista para interactuar.
+Una vez que el contenedor esté en funcionamiento, puedes acceder a la aplicación en tu navegador en [http://localhost:80/](http://localhost:80/). La aplicación debería estar disponible y lista para interactuar.
 
 ### Estructura del Proyecto
 
